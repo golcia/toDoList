@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="toDoApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:toDoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Page.Resources>
+        <DataTemplate x:Key="ItemsDataTemplate">
+            
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{Binding title}" Foreground="#FF7381" HorizontalAlignment="Center" Grid.Row="0" TextWrapping="WrapWholeWords"></TextBlock>
+                <TextBlock Text="{Binding ownerId}" Foreground="#FF7381" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="WrapWholeWords"></TextBlock>
+                
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    
+    <Grid x:Name="layoutRoot">
+        
+        <Grid  x:Name="contentGrid" Background="#EAEAEA" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" x:Name="taskListTitle" x:Uid="taskListTitle"  FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+            <ListBox Grid.Row="1" x:Name="List1" ItemsSource="{Binding ItemsCollection}" ItemTemplate="{ StaticResource ItemsDataTemplate}"  Background="#FFFFFF" SelectionChanged="ListBox1_SelectionChanged">
+            </ListBox>
+        </Grid>
+        
+        <ProgressRing x:Name="progressGrid" Height="90" Width="90" Visibility="Collapsed" IsActive="True"/>
+        
+    </Grid>
+
+    <Page.BottomAppBar >
+        
+        <CommandBar Background="#FF7381">
+            <AppBarButton Name="addTaskButton" x:Uid="addTaskButton"  Icon="Add"  Click="AddClick" />
+            <AppBarButton Name="syncOnwerButton" x:Uid="syncOnwerButton" Icon="Sync" Label="My tasks" Click="OwnerOnTaskClick" />
+            <AppBarButton Name="syncAllButton" x:Uid="syncAllButton" Icon="Sync"  Click="OnAllTaskClick" />
+            <AppBarButton Name="cancelButton" x:Uid="cancelButton" Icon="Cancel"  Click="LogoutClick" />
+        </CommandBar>
+        
+    </Page.BottomAppBar>
+
+
+    <!--
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Button x:Name="listViewButton" Content="List View" Grid.Row="0" Click="listViewButton_Click" />
+        <Button x:Name="gridViewButton" Content="Grid View" Grid.Row="1" Click="gridViewButton_Click"/>
+    </Grid>
+  -->
+</Page>

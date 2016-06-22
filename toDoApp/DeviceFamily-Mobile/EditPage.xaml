@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="toDoApp.EditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:toDoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#EAEAEA">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="40" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock Margin="0,5,0,0" HorizontalAlignment="Center" x:Uid="appBarDetailsTextBlock"></TextBlock>
+        <Border Background="#FFFFFF" Grid.Column="0" Grid.Row="1">
+            <StackPanel Margin="10,40,0,0"   HorizontalAlignment="Left" Width="250" >
+                <TextBlock Margin="0,5,0,0" Name="EditTitleTextBlock" x:Uid="EditTitleTextBlock" FontFamily="Georgia">  </TextBlock>
+                <TextBox Margin="0,5,0,0" x:Name ="titleTextBox" Text="{Binding CurrentObject.title,  Mode=TwoWay}" FontFamily="Georgia"></TextBox>
+                <TextBlock Margin="0,5,0,0" Name="EditDescriptionTextBlock" x:Uid="EditDescriptionTextBlock" FontFamily="Georgia"></TextBlock>
+                <TextBox Margin="0,5,0,0" x:Name ="textTextBox" Text="{Binding CurrentObject.value, Mode=TwoWay}" FontFamily="Georgia" AcceptsReturn="False" TextWrapping="Wrap"></TextBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+
+    <Page.BottomAppBar >
+        <CommandBar Background="#FF7381">
+            <AppBarButton Name="Back" x:Uid="backButtonEdit" Icon="Back" FontFamily="Georgia" HorizontalAlignment="Left" Click="CancelClick" />
+            <AppBarButton Name="Accept" x:Uid="addButtonEdit" Icon="Accept" FontFamily="Georgia" HorizontalAlignment="Left" Click="AcceptClick" />
+            <AppBarButton Name="Delete" x:Uid="deleteButtonEdit" Icon="Delete" FontFamily="Georgia" HorizontalAlignment="Left" Click="DeleteClick" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

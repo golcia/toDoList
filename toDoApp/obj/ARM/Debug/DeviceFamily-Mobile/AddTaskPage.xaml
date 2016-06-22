@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="toDoApp.AddTaskPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:toDoApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#eaeaea">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:ConnectionId='8' Margin="0,5,0,0" HorizontalAlignment="Center" Name="appBarAddTextBlock" x:Uid="appBarAddTextBlock" ></TextBlock>
+        
+        <Border Background="#FFFFFF" Grid.Column="0" Grid.Row="1">
+            <StackPanel Margin="10,40,0,0"   HorizontalAlignment="Left" Width="250">
+                <TextBlock x:ConnectionId='9' Name="titleAddTextBlock" x:Uid="titleAddTextBlock"  Margin="0,5,0,0"></TextBlock>
+                <TextBox x:ConnectionId='10' Margin="0,5,0,0" x:Name ="titleTextBox"></TextBox>
+                <TextBlock x:ConnectionId='11' Margin="0,5,0,0" Name="addDescriptionTextBlock" x:Uid="addDescriptionTextBlock"></TextBlock>
+                <TextBox x:ConnectionId='12' Margin="0,5,0,0" x:Name ="textTextBox" AcceptsReturn="False" TextWrapping="Wrap"></TextBox>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+
+    <Page.BottomAppBar >
+        <CommandBar Background="#ff7381">
+            <AppBarButton x:ConnectionId='13' Name="Back" x:Uid="addBackButton" Icon="Back" HorizontalAlignment="Left"                     />
+            <AppBarButton x:ConnectionId='14' Name="Accept" x:Uid="addAcceptButton"  Icon="Accept" HorizontalAlignment="Left"                    />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+

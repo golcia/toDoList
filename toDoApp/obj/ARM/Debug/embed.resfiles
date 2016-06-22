@@ -1,0 +1,11 @@
+AddTaskPage.xbf
+App.xbf
+DeviceFamily-Mobile\AddTaskPage.xbf
+DeviceFamily-Mobile\EditPage.xbf
+DeviceFamily-Mobile\LogInPage.xbf
+DeviceFamily-Mobile\MainPage.xbf
+DeviceFamily-Mobile\TaskDetails.xbf
+EditPage.xbf
+LogInPage.xbf
+MainPage.xbf
+TaskDetails.xbf
